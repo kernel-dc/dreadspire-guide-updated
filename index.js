@@ -612,7 +612,7 @@ module.exports = function DreadspireGuide(dispatch) {
                 }
             });
             
-            hook('S_ACTION_STAGE', 6, (event) => {  //TODO CHECK Correct version             
+            hook('S_ACTION_STAGE', 7, (event) => {  //TODO CHECK Correct version             
                 if (!bossInfo) return;
                 /* KLUDGE: Unable to find uint64 in array with .includes() ??? Converting to string for comparison atm...  */
                 if (!event.gameId.equals(bossInfo.id) && !currentMobs.includes(event.gameId.toString())) return;  
@@ -749,7 +749,7 @@ module.exports = function DreadspireGuide(dispatch) {
             });
             
             
-            hook('S_SPAWN_NPC', 8, event => {
+            hook('S_SPAWN_NPC', 9, event => {
                 if (!bossInfo) return;
                 
                 if (bossInfo.templateId === 8000) {
